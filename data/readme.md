@@ -1,9 +1,9 @@
 # Data
 
-This folder does not contain data files. Parts 1–5 need no dataset downloads.
+This folder does not contain data files. Parts 1–7 need no dataset downloads.
 They create data in code or load data built into a library.
 
-Parts 1 to 5 are ready:
+Parts 1 to 7 are ready:
 
 - **Part 1:** the **student-score dataset** is written as CSV text inside the
   notebook and read with `pandas.read_csv` from a text buffer. No CSV file is
@@ -19,4 +19,10 @@ Parts 1 to 5 are ready:
   `make_classification()`, a small hand example is written in code, and a small
   synthetic regression curve is created in code.
 
-Parts 6 to 14 are planned and have not been created yet.
+- **Part 6:** blobs and two moons are created with `make_blobs()` and
+  `make_moons()`. Small hand-written points demonstrate distances and density;
+  isolated points are added to demonstrate noise.
+- **Part 7:** a small fictional movie-rating matrix and genre features are
+  created in code. One observed rating per user is held out before fitting.
+
+Parts 8 to 14 are planned and have not been created yet.

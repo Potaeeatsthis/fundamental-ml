@@ -12,8 +12,8 @@ ends with a short summary of the main ideas.
 
 ## Current status
 
-- **Parts 1 to 5 are ready** in the `notebooks/` folder.
-- **Parts 6 to 14 are planned** and are not in this repository yet.
+- **Parts 1 to 7 are ready** in the `notebooks/` folder.
+- **Parts 8 to 14 are planned** and are not in this repository yet.
 
 The course has 14 parts. It does not include exercises, a final-project part,
 a separate large-language-model part, or Part 15.
@@ -27,13 +27,13 @@ a separate large-language-model part, or Part 15.
 | 3: Regression | `notebooks/part_03_regression.ipynb` | Linear and multiple regression, error metrics, gradient descent, polynomials |
 | 4: Classification | `notebooks/part_04_classification.ipynb` | KNN, decision trees, logistic regression, support vector machines |
 | 5: Model Evaluation and Improvement | `notebooks/part_05_model_evaluation.ipynb` | Confusion matrix, precision and recall, cross-validation, tuning, regularization |
+| 6: Clustering | `notebooks/part_06_clustering.ipynb` | Distances, K-means, elbow and silhouette, hierarchical linkage, DBSCAN |
+| 7: Recommender Systems | `notebooks/part_07_recommender_systems.ipynb` | Content-based, user- and item-based filtering, matrix factorization, evaluation, cold start |
 
 ### Planned parts
 
 | Part | Notebook |
 |---|---|
-| 6: Clustering | `notebooks/part_06_clustering.ipynb` |
-| 7: Recommender Systems | `notebooks/part_07_recommender_systems.ipynb` |
 | 8: Neural Network Foundations | `notebooks/part_08_neural_network_foundations.ipynb` |
 | 9: Deep Learning with Keras | `notebooks/part_09_deep_learning_with_keras.ipynb` |
 | 10: Convolutional Neural Networks | `notebooks/part_10_convolutional_neural_networks.ipynb` |
@@ -55,7 +55,9 @@ a separate large-language-model part, or Part 15.
     ├── part_02_data_preparation.ipynb
     ├── part_03_regression.ipynb
     ├── part_04_classification.ipynb
-    └── part_05_model_evaluation.ipynb
+    ├── part_05_model_evaluation.ipynb
+    ├── part_06_clustering.ipynb
+    └── part_07_recommender_systems.ipynb
 ```
 
 ## Run in Google Colab
@@ -93,7 +95,7 @@ Colab already includes the required libraries.
 
 ## Data
 
-Parts 1–5 need no dataset downloads or manual data files. Their datasets are
+Parts 1–7 need no dataset downloads or manual data files. Their datasets are
 created inside the notebooks or built into a library:
 
 - **Part 1:** the **student-score dataset** is created inside the notebook. A CSV
@@ -107,5 +109,8 @@ created inside the notebooks or built into a library:
 - **Part 5:** balanced and imbalanced classification sets are created with
   `make_classification()`, a small hand example is written in code, and a small
   synthetic regression curve is created in code.
+- **Part 6:** `make_blobs()`, `make_moons()`, and small hand-written points show
+  compact clusters, curved clusters, and noise.
+- **Part 7:** fictional movie ratings and genre features are created in code.
 
 The `data/` folder only holds an explanation. See `data/readme.md`.
