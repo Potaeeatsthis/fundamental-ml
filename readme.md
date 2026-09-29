@@ -12,8 +12,8 @@ ends with a short summary of the main ideas.
 
 ## Current status
 
-- **Parts 1 to 7 are ready** in the `notebooks/` folder.
-- **Parts 8 to 14 are planned** and are not in this repository yet.
+- **Parts 1 to 10 are ready** in the `notebooks/` folder.
+- **Parts 11 to 14 are planned** and are not in this repository yet.
 
 The course has 14 parts. It does not include exercises, a final-project part,
 a separate large-language-model part, or Part 15.
@@ -29,14 +29,14 @@ a separate large-language-model part, or Part 15.
 | 5: Model Evaluation and Improvement | `notebooks/part_05_model_evaluation.ipynb` | Confusion matrix, precision and recall, cross-validation, tuning, regularization |
 | 6: Clustering | `notebooks/part_06_clustering.ipynb` | Distances, K-means, elbow and silhouette, hierarchical linkage, DBSCAN |
 | 7: Recommender Systems | `notebooks/part_07_recommender_systems.ipynb` | Content-based, user- and item-based filtering, matrix factorization, evaluation, cold start |
+| 8: Neural Network Foundations | `notebooks/part_08_neural_network_foundations.ipynb` | Neurons, activations, NumPy forward pass, backpropagation, optimization |
+| 9: Deep Learning with Keras | `notebooks/part_09_deep_learning_with_keras.ipynb` | Dense classifier, validation, callbacks, checkpoints, saving and loading |
+| 10: Convolutional Neural Networks | `notebooks/part_10_convolutional_neural_networks.ipynb` | Filters, pooling, augmentation, CNN training, VGG and residual connections |
 
 ### Planned parts
 
 | Part | Notebook |
 |---|---|
-| 8: Neural Network Foundations | `notebooks/part_08_neural_network_foundations.ipynb` |
-| 9: Deep Learning with Keras | `notebooks/part_09_deep_learning_with_keras.ipynb` |
-| 10: Convolutional Neural Networks | `notebooks/part_10_convolutional_neural_networks.ipynb` |
 | 11: Sequence Models | `notebooks/part_11_sequence_models.ipynb` |
 | 12: Transformers | `notebooks/part_12_transformers.ipynb` |
 | 13: Unsupervised and Generative Deep Learning | `notebooks/part_13_generative_deep_learning.ipynb` |
@@ -57,7 +57,10 @@ a separate large-language-model part, or Part 15.
     ├── part_04_classification.ipynb
     ├── part_05_model_evaluation.ipynb
     ├── part_06_clustering.ipynb
-    └── part_07_recommender_systems.ipynb
+    ├── part_07_recommender_systems.ipynb
+    ├── part_08_neural_network_foundations.ipynb
+    ├── part_09_deep_learning_with_keras.ipynb
+    └── part_10_convolutional_neural_networks.ipynb
 ```
 
 ## Run in Google Colab
@@ -68,11 +71,14 @@ a separate large-language-model part, or Part 15.
 3. Choose **Runtime > Change runtime type**, select **CPU**, and click **Save**.
 4. Choose **Runtime > Run all** to run every cell from top to bottom.
 
-Colab already includes the required libraries.
+Colab normally includes the required libraries, including TensorFlow for Parts 9
+and 10. Both lessons use small subsets and short training runs on a CPU; a GPU
+is optional. Their first run needs internet access to download Fashion-MNIST
+(about 30 MB), which Keras caches for later runs.
 
 ## Run on your own computer
 
-1. Open a terminal in `2026-kmitl-data-analytics/`, then create and activate a virtual environment:
+1. Open a terminal in `2026-kmitl-data-analytics/`, then create and activate a virtual environment. Python 3.11 or 3.12 is recommended for broad TensorFlow compatibility:
 
    ```bash
    python -m venv .venv
@@ -95,7 +101,7 @@ Colab already includes the required libraries.
 
 ## Data
 
-Parts 1–7 need no dataset downloads or manual data files. Their datasets are
+Parts 1–8 need no dataset downloads or manual data files. Their datasets are
 created inside the notebooks or built into a library:
 
 - **Part 1:** the **student-score dataset** is created inside the notebook. A CSV
@@ -112,5 +118,20 @@ created inside the notebooks or built into a library:
 - **Part 6:** `make_blobs()`, `make_moons()`, and small hand-written points show
   compact clusters, curved clusters, and noise.
 - **Part 7:** fictional movie ratings and genre features are created in code.
+- **Part 8:** hand-written neuron inputs and the four XOR cases are created in
+  code and trained with NumPy.
+
+Parts 9–10 use `keras.datasets.fashion_mnist.load_data()`. The loader downloads
+the dataset automatically on first use; no manual files are needed:
+
+- **Part 9:** 6,000 training, 1,000 validation and 1,000 test images. Checkpoints
+  and the selected model are saved as `.keras` files in a new temporary folder
+  printed by the notebook. Copy or download them before the runtime is removed.
+- **Part 10:** 4,000 training, 800 validation and 800 test images, plus small
+  hand-written arrays for filters, pooling and residual addition. Augmentation
+  is active only during training.
+
+Validation images come from the original training split; final evaluation uses
+the separate test split. These small subsets are for teaching, not benchmarks.
 
 The `data/` folder only holds an explanation. See `data/readme.md`.

@@ -5,3 +5,4 @@ seaborn
 scipy
 scikit-learn
 notebook
+tensorflow>=2.16,<3
